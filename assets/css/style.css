@@ -1,0 +1,168 @@
+/* Reset CSS */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* End Reset */
+/* Start Global Section */
+:root {
+  --main-color: #0424d7;
+  --secondary-color: #03b6cc;
+  --main-alt-color: #fded02;
+  --secondary-alt-color: #d1ccd2;
+}
+html {
+  scroll-behavior: smooth;
+  direction: rtl;
+}
+body {
+  font-family: "Cairo", sans-serif;
+}
+.container {
+  margin-left: 15px;
+  margin-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* End Global Section */
+/* Styles for desktop screens */
+@media only screen and (min-width: 1024px) {
+  /* Add desktop-specific styles here */
+}
+/* Styles for tablet screens */
+@media only screen and (max-width: 1023px) and (min-width: 768px) {
+  /* Add tablet-specific styles here */
+}
+/* Styles for mobile screens */
+@media only screen and (max-width: 767px) {
+  /* Add mobile-specific styles here */
+}
+
+/* == Start Header Section Styling == */
+.header {
+  height: 72px;
+  width: 100%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 10px 0;
+}
+/* == End Header Section Styling == */
