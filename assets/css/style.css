@@ -172,7 +172,6 @@ body {
   height: 6rem;
   width: 100%;
   padding: 0.25rem 0;
-  /* box-shadow: 0rem 0rem 0.25rem var(--white-color); */
 }
 .header .nav_bar {
   width: 100%;
@@ -200,7 +199,6 @@ body {
   position: relative;
   z-index: 1;
   margin-left: 1rem;
-  /* border-bottom: 0.1rem solid var(--white-color); */
 }
 .nav_bar .links > li {
   height: 100%;
@@ -414,7 +412,7 @@ body {
   top: 50%;
   transform: translateY(-50%);
 }
-.landing .container .txt h1 {
+/* .landing .container .txt h1 {
 }
 .landing .container .txt h2 {
 }
@@ -427,5 +425,5 @@ body {
 .landing .social_media .social_link {
 }
 .landing .social_media .social_link > svg {
-}
+} */
 /* == End Landing Section Styling == */
