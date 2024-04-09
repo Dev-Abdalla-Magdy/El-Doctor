@@ -61,10 +61,12 @@
         <li>
           <a href="#home" class="link">الرئيسية</a>
         </li>
-        <li>
-          <a href="#about" class="main_link link">من نكون</a>
-          <i class="fa-solid fa-caret-down drop_list"></i>
-          <ul class="b_links inactive">
+        <li class="main_link" data-target="drop-list-1">
+          <a href="#about" class=" link">من نكون</a>
+          <button class="list_btn" id="list_btn">
+            <i class="fa-solid fa-caret-down drop_list"></i>
+          </button>
+          <ul class="b_links inactive" id="drop-list-1">
             <li>
               <a href="#" class="I_link b_link">المؤهلات</a>
             </li>
@@ -79,10 +81,12 @@
             </li>
           </ul>
         </li>
-        <li>
-          <a href="" class="main_link link">تخصصاتنا</a>
-          <i class="fa-solid fa-caret-down drop_list"></i>
-          <ul class="b_links inactive">
+        <li class="main_link" data-target="drop-list-2">
+          <a href="" class="link">تخصصاتنا</a>
+          <button class="list_btn" id="list_btn">
+            <i class="fa-solid fa-caret-down drop_list"></i>
+          </button>
+          <ul class="b_links inactive" id="drop-list-2">
             <li>
               <a href="#" class="I_link b_link">التأهيل البدني والعلاج الحركي</a>
             </li>
@@ -113,10 +117,6 @@
           <a href="" class="link">للحجز والاستفسار</a>
         </li>
       </ul>
-      <!-- <div class="search_box">
-        <input type="text" class="search" placeholder="عن ماذا تبحث ؟">
-        <i class="fa-solid fa-magnifying-glass"></i>
-      </div> -->
       <div class="menu" id="menu">
         <div class="holder">
           <span class="bar"></span>
@@ -128,6 +128,62 @@
     </div>
   </div>
   <!-- End Header Section -->
+
+  <!--Start Landing Section -->
+  <div class="landing">
+    <div class="search_box">
+      <input type="text" class="search_input" placeholder="عن ماذا تبحث ؟">
+      <i class="fa-solid fa-magnifying-glass search_icon"></i>
+    </div>
+    <div class="container">
+      <div class="img">
+        <img src="assets/imgs/landing_profile.png" alt="">
+      </div>
+      <div class="txt">
+        <h1>مركز الدكتور...</h1>
+        <h2>أحمد عيد</h2>
+        <p>لتأهيل الإصابات والعلاج الحركي والتدليك والحجامة...</p>
+        <p>يرحب بكم...</p>
+      </div>
+      <div class="social_media">
+        <a href="" class="social_link">
+          <i class="fa-brands fa-facebook"></i>
+        </a>
+        <a href="" class="social_link">
+          <i class="fa-brands fa-facebook-messenger"></i>
+        </a>
+        <a href="" class="social_link">
+          <i class="fa-brands fa-youtube"></i>
+        </a>
+        <a href="" class="social_link">
+          <i class="fa-brands fa-x-twitter"></i>
+        </a>
+        <a href="" class="social_link">
+          <i class="fa-brands fa-whatsapp"></i>
+        </a>
+        <a href="" class="social_link">
+          <i class="fa-solid fa-envelope"></i>
+        </a>
+        <a href="" class="social_link">
+          <i class="fa-solid fa-location-dot"></i>
+        </a>
+      </div>
+      <div class="scroll-down">
+        <i class="fa-solid fa-angles-up"></i>
+      </div>
+    </div>
+    <div class="pagination">
+      <div class="holder">
+        <span class="page_number" data-page="page-1"></span>
+        <span class="page_number" data-page="page-2"></span>
+        <span class="page_number" data-page="page-3"></span>
+        <span class="page_number" data-page="page-4"></span>
+        <span class="page_number" data-page="page-5"></span>
+        <span class="page_number" data-page="page-6"></span>
+      </div>
+    </div>
+  </div>
+  <!-- End Landing Section -->
 
   <!-- Start Footer Section -->
   <div class="footer">
@@ -142,3 +198,4 @@
 </body>
 
 </html>
+<!-- C:\Users\engab\Documents\GitHub-Project\El-Doctor -->
