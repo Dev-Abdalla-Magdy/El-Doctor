@@ -61,12 +61,12 @@
         <li>
           <a href="#home" class="link">الرئيسية</a>
         </li>
-        <li class="main_link" data-target="drop-list-1">
-          <a href="#about" class=" link">من نكون</a>
+        <li class="main_link" data-target="drop_list_1" id="drop_list_btn_1">
+          <a href="" class="link" onclick="return false;">من نكون</a>
           <button class="list_btn" id="list_btn">
             <i class="fa-solid fa-caret-down drop_list"></i>
           </button>
-          <ul class="b_links inactive" id="drop-list-1">
+          <ul class="b_links inactive" id="drop_list_1">
             <li>
               <a href="#" class="I_link b_link">المؤهلات</a>
             </li>
@@ -81,12 +81,12 @@
             </li>
           </ul>
         </li>
-        <li class="main_link" data-target="drop-list-2">
-          <a href="" class="link">تخصصاتنا</a>
+        <li class="main_link" data-target="drop_list_2" id="drop_list_btn_2">
+          <a href="" class="link" onclick="return false;">تخصصاتنا</a>
           <button class="list_btn" id="list_btn">
             <i class="fa-solid fa-caret-down drop_list"></i>
           </button>
-          <ul class="b_links inactive" id="drop-list-2">
+          <ul class="b_links inactive" id="drop_list_2">
             <li>
               <a href="#" class="I_link b_link">التأهيل البدني والعلاج الحركي</a>
             </li>
@@ -124,7 +124,14 @@
           <span class="bar"></span>
         </div>
       </div>
-
+      <div class="mode" id="theme_btn">
+        <button id="dark_btn" class="">
+          <i class="fa-solid fa-moon dark"></i>
+        </button>
+        <button id="light_btn" class="inactive">
+          <i class="fa-solid fa-sun light"></i>
+        </button>
+      </div>
     </div>
   </div>
   <!-- End Header Section -->
@@ -137,7 +144,7 @@
     </div>
     <div class="container">
       <div class="img">
-        <img src="assets/imgs/landing_profile.png" alt="">
+        <!-- <img src="assets/imgs/landing_profile.png" alt="صورة الدكتور أحمد عيد"> -->
       </div>
       <div class="txt">
         <h1>مركز الدكتور...</h1>

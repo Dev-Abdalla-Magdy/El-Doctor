@@ -1,140 +1,17 @@
-/* Reset CSS */
-html,
-body,
-div,
-span,
-applet,
-object,
-iframe,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote,
-pre,
-a,
-abbr,
-acronym,
-address,
-big,
-cite,
-code,
-del,
-dfn,
-em,
-img,
-ins,
-kbd,
-q,
-s,
-samp,
-small,
-strike,
-strong,
-sub,
-sup,
-tt,
-var,
-b,
-u,
-i,
-center,
-dl,
-dt,
-dd,
-ol,
-ul,
-li,
-fieldset,
-form,
-label,
-legend,
-table,
-caption,
-tbody,
-tfoot,
-thead,
-tr,
-th,
-td,
-article,
-aside,
-canvas,
-details,
-embed,
-figure,
-figcaption,
-footer,
-header,
-hgroup,
-menu,
-nav,
-output,
-ruby,
-section,
-summary,
-time,
-mark,
-audio,
-video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-menu,
-nav,
-section {
-  display: block;
-}
-body {
-  line-height: 1;
-}
-ol,
-ul {
-  list-style: none;
-}
-blockquote,
-q {
-  quotes: none;
-}
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
-  content: "";
-  content: none;
-}
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-/* End Reset */
 /* Start Global Section */
 :root {
   --main-color: #0424d7;
   --main-color-alpha: rgba(4, 36, 215, 0.5);
   --secondary-color: #03b6cc;
   --secondary-color-alpha: rgba(3, 181, 204, 0.5);
+  --secondary-color-alpha1: rgba(3, 181, 204, 0.25);
   --main-alt-color: #fded02;
   --secondary-alt-color: #d1ccd2;
   --white-color: #ffffff;
+  --bg-color: #fbfbfb;
   --black-color: #000000;
-  --main-transition: 0.3s;
+  --text-color: #0f0f0f;
+  --main-transition: 0.2s;
   --secondary-transition: 0.5s;
 }
 html {
@@ -143,9 +20,9 @@ html {
 }
 body {
   font-family: "Cairo", sans-serif;
-  background: linear-gradient(var(--secondary-color), var(--main-color));
-  height: 100vh;
-  overflow: hidden;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: var(--secondary-transition);
 }
 .container {
   margin-left: 0.1rem;
@@ -171,7 +48,8 @@ body {
 .header {
   height: 6rem;
   width: 100%;
-  padding: 0.25rem 0;
+  padding: 0rem;
+  box-shadow: 0rem 0rem 1rem var(--secondary-alt-color);
 }
 .header .nav_bar {
   width: 100%;
@@ -187,9 +65,10 @@ body {
   align-items: center;
   justify-content: center;
   margin-right: 1rem;
+  padding: 0.25rem;
 }
 .nav_bar .logo_link img {
-  width: 6rem;
+  width: 5rem;
   max-width: 100%;
 }
 .nav_bar .links {
@@ -198,7 +77,7 @@ body {
   height: 100%;
   position: relative;
   z-index: 1;
-  margin-left: 1rem;
+  list-style: none;
 }
 .nav_bar .links > li {
   height: 100%;
@@ -206,12 +85,7 @@ body {
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  padding: 0.5rem 1rem;
-  border-radius: 0.5rem;
-  transition: var(--main-transition);
-}
-.nav_bar .links > li:hover {
-  background-color: var(--main-color-alpha);
+  position: relative;
 }
 .nav_bar .links > li > .link {
   width: 100%;
@@ -221,8 +95,16 @@ body {
   justify-content: center;
   position: relative;
   text-decoration: none;
-  color: var(--white-color);
+  color: var(--secondary-color);
   font-size: 1.25rem;
+  font-weight: bold;
+  padding: 0rem 1rem;
+  border-radius: 0.5rem;
+  transition: var(--main-transition);
+}
+.nav_bar .links > li:hover .link {
+  background-color: var(--secondary-color);
+  color: var(--white-color);
 }
 .nav_bar .links > li > button {
   border: none;
@@ -231,10 +113,12 @@ body {
   position: absolute;
   bottom: 0;
   width: 4rem;
-  color: var(--white-color);
+  color: var(--secondary-color);
   cursor: pointer;
-  padding: 0.25rem 0.5rem;
   transition: var(--main-transition);
+}
+.nav_bar .links > li:hover button {
+  color: var(--white-color);
 }
 .nav_bar .links > li > button > svg {
   font-size: 2rem;
@@ -249,14 +133,9 @@ body {
   justify-content: center;
   padding: 0.5rem;
   border-radius: 0.5rem;
-}
-#drop-list-1 {
-  bottom: -14.5rem;
-  right: 6rem;
-}
-#drop-list-2 {
-  bottom: -21rem;
-  left: 10.5rem;
+  top: 100%;
+  right: 0rem;
+  box-shadow: 0rem 0rem 1rem var(--secondary-alt-color);
 }
 .nav_bar .links li > .b_links.inactive {
   display: none;
@@ -268,20 +147,28 @@ body {
   justify-content: center;
   padding: 1rem 0;
   cursor: pointer;
+  border-radius: 0.5rem;
   transition: var(--main-transition);
 }
+.nav_bar .links li > .b_links > li:not(:hover) .b_link {
+  opacity: 0.8;
+}
 .nav_bar .links li > .b_links > li:hover {
-  background-color: var(--main-color-alpha);
-  border-radius: 0.5rem;
+  box-shadow: 0rem 0rem 1rem var(--white-color),
+    0rem 0rem 1rem var(--white-color);
 }
 .nav_bar .links li > .b_links > li > .b_link {
   text-decoration: none;
   color: var(--white-color);
   font-size: 1.25rem;
 }
+.nav_bar .links li > .b_links > li:hover .b_link {
+  text-shadow: 0rem 0rem 1rem var(--white-color),
+    0rem 0rem 1rem var(--white-color);
+}
 .nav_bar .menu {
-  width: 4rem;
-  height: 4rem;
+  width: 3rem;
+  height: 3rem;
   margin-left: 1rem;
   cursor: pointer;
   transition: var(--main-transition);
@@ -302,44 +189,109 @@ body {
 .nav_bar .menu .holder .bar {
   width: 100%;
   height: 0.25rem;
-  background-color: var(--white-color);
+  background-color: var(--secondary-color);
   margin: 0.25rem 0;
   transition: var(--secondary-transition);
 }
 .nav_bar .menu .holder .bar.active:nth-of-type(1) {
-  transform: rotate(45deg) translate(0.8rem, 0.8rem);
+  transform: rotate(45deg) translate(0.65rem, 0.65rem);
 }
 .nav_bar .menu .holder .bar.active:nth-of-type(2) {
   transform: translateX(-100%);
 }
 .nav_bar .menu .holder .bar.active:nth-of-type(3) {
-  transform: rotate(-45deg) translate(0.8rem, -0.8rem);
+  transform: rotate(-45deg) translate(0.65rem, -0.65rem);
 }
-@media (max-width: 900px) {
+.nav_bar .mode {
+  height: 2rem;
+  width: 4rem;
+  background-color: var(--secondary-color);
+  z-index: 2;
+  cursor: pointer;
+  border-radius: 3rem;
+  margin-left: 1rem;
+  position: relative;
+  padding: 0.25rem 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  transition: var(--main-transition);
+}
+.nav_bar .mode button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  border: none;
+  background-color: transparent;
+  outline: none;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  left: 0%;
+  cursor: pointer;
+  transition: var(--secondary-transition);
+}
+.nav_bar .mode button.inactive {
+  background-color: #333;
+  border: 0.25rem solid #1effff;
+  height: 2.5rem;
+  width: 2.5rem;
+  position: absolute;
+  transition: var(--main-transition);
+}
+.nav_bar .mode svg {
+  font-size: 2rem;
+  color: #fded02;
+  transition: var(--main-transition);
+}
+.nav_bar .mode:hover svg {
+  scale: 1.1;
+  transition: var(--main-transition);
+}
+#dark_btn {
+  right: 0%;
+}
+#dark_btn svg {
+  color: var(--secondary-alt-color);
+}
+#light_btn {
+  left: 0%;
+}
+#light_btn svg {
+  color: var(--main-alt-color);
+}
+@media (max-width: 767px) {
   .nav_bar .links {
     flex-direction: column;
     height: 100%;
     width: 85%;
-    background-color: var(--secondary-color-alpha);
+    background-color: var(--secondary-color-alpha1);
     backdrop-filter: blur(5px);
     margin-left: 0;
     position: fixed;
     bottom: 0;
     left: -100%;
     justify-content: center;
+    align-items: center;
     transition: var(--main-transition);
   }
   .nav_bar .links.active {
     left: 0;
+    padding: 0;
+    margin: 0;
+    transition: var(--main-transition);
   }
   .nav_bar .links > li {
-    height: auto;
+    height: 4rem;
     width: 100%;
-    padding: 2rem 0;
     position: relative;
   }
   .nav_bar .links > li > .link {
-    height: auto;
+    height: 100%;
+    margin: 0;
+    padding: 0;
   }
   .nav_bar .links li > .b_links {
     background-color: var(--secondary-color);
@@ -347,16 +299,22 @@ body {
     z-index: 2;
     padding: 0;
   }
-  #drop-list-1 {
-    bottom: -13rem;
-    right: 0rem;
-  }
-  #drop-list-2 {
-    bottom: -19.5rem;
-    left: 0rem;
+  .nav_bar .mode {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-left: 0;
+    z-index: 0;
+    padding: 0.25rem 0.5rem;
   }
 }
-@media (min-width: 901px) {
+@media (min-width: 768px) and (max-width: 1023px) {
+  .nav_bar .links > li > .link {
+    padding: 0rem 0.5rem;
+    font-size: 1rem;
+  }
+}
+@media (min-width: 768px) {
   .nav_bar .menu {
     display: none;
   }
@@ -412,7 +370,7 @@ body {
   top: 50%;
   transform: translateY(-50%);
 }
-/* .landing .container .txt h1 {
+.landing .container .txt h1 {
 }
 .landing .container .txt h2 {
 }
@@ -425,5 +383,5 @@ body {
 .landing .social_media .social_link {
 }
 .landing .social_media .social_link > svg {
-} */
+}
 /* == End Landing Section Styling == */
