@@ -1,3 +1,4 @@
+/* ===== 🔽 Burger Menu Section 🔽 =====*/
 const linksMenu = document.querySelector(".links");
 const burgerMenu = document.querySelector("#menu");
 const allBarsMenu = document.querySelectorAll(".bar");
@@ -6,6 +7,7 @@ burgerMenu.addEventListener("click", function () {
   allBarsMenu.forEach((item) => item.classList.toggle("active"));
   linksMenu.classList.toggle("active");
 });
+/* ===== 🔼 Burger Menu Section 🔼 =====*/
 
 /* ===== 🔽 Header Drop List Menu 🔽 =====*/
 const dropListBtn1 = document.getElementById("drop_list_btn_1");
@@ -36,6 +38,8 @@ document.addEventListener("click", function (event) {
   }
 });
 /* ===== 🔼 Header Drop List Menu 🔼 =====*/
+
+/* ===== 🔽 Theme Section Below 🔽 =====*/
 const themeBtn = document.getElementById("theme_btn");
 const darkBtn = document.getElementById("dark_btn");
 const lightBtn = document.getElementById("light_btn");
@@ -66,3 +70,4 @@ themeBtn.addEventListener("click", (event) => {
   localStorage.setItem("darkTheme", newIsDarkTheme);
   isDarkTheme = newIsDarkTheme;
 });
+/* ===== 🔼 Theme Section Below 🔼 =====*/
